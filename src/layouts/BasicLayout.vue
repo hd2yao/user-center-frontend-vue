@@ -1,7 +1,9 @@
 <template>
   <div id="basicLayout">
     <a-layout>
-      <a-layout-header>Header</a-layout-header>
+      <a-layout-header class="header">
+        <GlobalHeader />
+      </a-layout-header>
       <a-layout-content class="content">
         <router-view />
       </a-layout-content>
@@ -12,7 +14,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import GlobalHeader from "@/components/GlobalHeader.vue";
+</script>
 
 <style scoped>
 #basicLayout .footer {
@@ -32,5 +36,12 @@
   padding: 20px;
   margin-bottom: 20px;
   background: linear-gradient(to right, #efefef, #fff);
+}
+
+#basicLayout .header {
+  background: white;
+  margin-bottom: 16px;
+  color: unset;
+  padding-inline: 20px;
 }
 </style>
